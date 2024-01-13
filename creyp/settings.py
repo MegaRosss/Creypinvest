@@ -12,11 +12,12 @@ load_dotenv(BASE_DIR / ".env")
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = os.getenv("SECRET_KEY","fmheje3^g7-xwv%mtx-zrfe7oek@5*csx$u+yn-+zd^e#d3cjo")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = "True" in os.getenv("DEBUG")
-USE_S3 = "True" in os.getenv("USE_S3")
+DEBUG = os.getenv("DEBUG",False)
+# DEBUG = "True" in os.getenv("DEBUG")
+USE_S3 =  os.getenv("USE_S3",False)
 
 ALLOWED_HOSTS = ["*"]
 LOGIN_URL = "/auth/account/login"
@@ -194,12 +195,15 @@ STATICFILES_DIRS = [
 ]
 
 # STMP
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_HOST = "smtp.mail.yahoo.com"
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
 DEFAULT_FROM_EMAIL = os.getenv("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+EMAIL_USE_TLS = False
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
