@@ -34,7 +34,7 @@
     />
 
     <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://www.creypinvest.org/" />
+    <meta property="og:url" content="https://www.creypinvest.co/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="CreypInvest - Home" />
     <meta
@@ -45,8 +45,8 @@
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content="creypinvest.org" />
-    <meta property="twitter:url" content="https://www.creypinvest.org/" />
+    <meta property="twitter:domain" content="creypinvest.co" />
+    <meta property="twitter:url" content="https://www.creypinvest.co/" />
     <meta name="twitter:title" content="CreypInvest - Home" />
     <meta
       name="twitter:description"
@@ -89,6 +89,24 @@
       src="https://kit.fontawesome.com/f75233d904.js"
       crossorigin="anonymous"
     ></script>
+    
+    <script>
+      (function(d,t) {
+        var BASE_URL="https://app.chatwoot.com";
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=BASE_URL+"/packs/js/sdk.js";
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g,s);
+        g.onload=function(){
+          window.chatwootSDK.run({
+            websiteToken: 'pgbGdf1BqAWBPwEXG9rFsh9H',
+            baseUrl: BASE_URL
+          })
+        }
+      })(document,"script");
+    </script>
+    
 
     <!-- Custom styles -->
     {% block css %} {% endblock css %}
